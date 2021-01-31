@@ -1,14 +1,31 @@
 ﻿
 var dialogButtons = document.getElementsByClassName("dialog-button");
 
-for(i=0; i< dialogButtons.length; i++){
-    document.getElementsByClassName("dialog-button")[i].addEventListener('click', function(){
-        openDialog();
+for(var i=0; i< dialogButtons.length; i++){
+    document.getElementsByClassName("dialog-button")[i].addEventListener('click', function(event){
+        openDialog(event);
     });
 }
 
-function openDialog(){
 
+var openDialog = function (event){
+
+    console.log(event);
+    console.log(event.target.id);
+
+    
+
+    var options = {
+        icon:{
+            success:'assets/img/success.png',
+            warning:'assets/img/warning.png',
+            info:'assets/img/info.png'
+        },
+        text:'Boş!',
+        confirm:false,
+        closeButton:true
+    };
+    
     var myDialogDiv = document.createElement("div"); 
     myDialogDiv.className = "my-dialog";
     var myDialogHeaderDiv = document.createElement("div"); 
